@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Test Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSP Policy Testing</h1>
+    </div>
+    <!-- Non third party script -->
+    <script src="index.js" integrity="sha384-Pf/mgdOkgHqYH2m61o+k36FGWbDih7uuvTXNh/DprqS4XcfP7IVCDuoabE29W7NX" crossorigin="anonymous"></script>
+    <!-- Third party script inject here -->
+    <script src="http://localhost:8888/script.js" integrity="sha384-eSKCHwDqybELLVMLFpGHuNWzs/zBFvRQYw61DiQXocOFZlUs17pHhWKUFtSqoOHd" crossorigin="anonymous"></script>
+</body>
+</html>
