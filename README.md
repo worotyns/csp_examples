@@ -201,6 +201,27 @@ Multiple variation of SHA addedd to direcrive not works and allow access to scri
 Even if I add SRI and CSP to script, third party script, then third script can register sw.js.
 Sill I cannot check integrity of third-party code in worker.js (this content can be changed to suspicious code).
 
+## Next steps to secure worker dynamic content - add third party validity checker
+
+Add service integrity-service.js that will access and check integrity of third-party scripts.
+
+Now in sw.js code will look:
+```
+// Use a integrity partner proxy
+importScripts('http://localhost:9000/?url=http://localhost:8888/worker.js&integrity=sha384-lEKbZ20O1biXGvrc1Xeq+uuVoBgTs1xn+n8D8SE8xTD0zE0lBwLtd9myuQePR7bn');
+```
+
+And run `integrity-service.js`.
+```
+deno run -A integrity-service.js
+```
+
+Now console shows that everything works ok, but when you edit worker.js file by adding "console.log('hacked')";
+
+Console output will be:
+```
+
+```
 ## License
 
 MIT

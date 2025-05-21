@@ -10,4 +10,7 @@ self.addEventListener('message', (event) => {
 });
 
 // Import the worker script from third party resource
-importScripts('http://localhost:8888/worker.js');
+// importScripts('http://localhost:8888/worker.js');
+
+// Use a integrity partner proxy
+importScripts('http://localhost:9000/?url=http://localhost:8888/worker.js&integrity=sha384-lEKbZ20O1biXGvrc1Xeq+uuVoBgTs1xn+n8D8SE8xTD0zE0lBwLtd9myuQePR7bn');
