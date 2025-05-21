@@ -173,7 +173,7 @@ const csp = [
 Status:
  - Local scripts: allowed via CSP and checked by SRI integrity
  - Third party scripts: allowed via CSP and checked by SRI integrity
- - Service worker: allowed via CSP and checked by SRI integrity
+ - Service worker: allowed via CSP and NOT checked by SRI integrity
 
 Console shows:
 ```
@@ -187,7 +187,7 @@ Script loaded - from self index.js
 
 That's mean that sw.js is allowed to injct worker.js without integrity checks.
 
-4. Try to add to CSP 'sha' not works, like:
+4. Try to add to CSP 'sha' not works for sw.js / and third party worker.js, like:
 
 Multiple variation of SHA addedd to direcrive not works and allow access to scripts where:
 
